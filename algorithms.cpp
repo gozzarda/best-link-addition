@@ -25,11 +25,14 @@ int sum_shortest(vector<vector<int>> adj_mat) {
 	// Sum up all shortest paths.
 	int sum = 0;
 	for (int i = 0; i < V; ++i)
-		for (int j = 0; j < V; ++j)
-			if (adj_mat[i][j] != INF)
-				sum += adj_mat[i][j];
+		for (int j = 0; j < V; ++j) {
+			sum += adj_mat[i][j];
+			sum = min(sum, INF);
+		}
 	return sum;
 }
+
+#include <iostream>
 
 // Implements the naive algorithm for finding a single edge
 // from a set of edges "el" that, when added to a graph
@@ -42,8 +45,11 @@ int brute_force(vector<vector<int>> adj_mat, const vector<Edge>& el) {
 		int old_c = adj_mat[e.i][e.j];
 		adj_mat[e.i][e.j] = e.cost;
 		best = min(best, sum_shortest(adj_mat));
+		cout << e.i << " " << e.j << " " << e.cost << " " << sum_shortest(adj_mat) << endl;
 		adj_mat[e.i][e.j] = old_c;
+
 	}
+	cout << best << endl;
 	return best;
 }
 
@@ -61,8 +67,10 @@ int ward_datta(vector<vector<int>> adj_mat, const vector<Edge>& el) {
 		// Sum up all shortest paths.
 		// Does a single edge relaxation to see if the shortest path changed.
 		for (int i = 0; i < V; ++i)
-			for (int j = 0; j < V; ++j)
+			for (int j = 0; j < V; ++j) {
 				sum += min(adj_mat[i][j], adj_mat[i][e.i] + e.cost + adj_mat[e.j][j]);
+				sum = min(sum, INF);
+			}
 		best = min(best, sum);
 	}
 	return best;
