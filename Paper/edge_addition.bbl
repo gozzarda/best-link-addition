@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{M}
+Milgram S.
+\newblock The small world problem.
+\newblock Psychology today. 1967;2(1):60--67.
+
+\bibitem{WS}
+Watts DJ, Strogatz SH.
+\newblock Collective dynamics of ‘small-world’networks.
+\newblock nature. 1998;393(6684):440--442.
+
+\bibitem{CS}
+Comellas F, Sampels M.
+\newblock Deterministic small-world networks.
+\newblock Physica A: Statistical Mechanics and its Applications.
+  2002;309(1):231--235.
+
+\bibitem{F}
+Fall K.
+\newblock A delay-tolerant network architecture for challenged internets.
+\newblock In: Proceedings of the 2003 conference on Applications, technologies,
+  architectures, and protocols for computer communications. ACM; 2003. p.
+  27--34.
+
+\bibitem{LSG}
+Lu ZM, Su YX, Guo SZ.
+\newblock Deterministic scale-free small-world networks of arbitrary order.
+\newblock Physica A: Statistical Mechanics and its Applications.
+  2013;392(17):3555--3562.
+
+\bibitem{MT}
+Meyerson A, Tagiku B.
+\newblock Minimizing average shortest path distances via shortcut edge
+  addition.
+\newblock In: Approximation, Randomization, and Combinatorial Optimization.
+  Algorithms and Techniques. Springer; 2009. p. 272--285.
+
+\bibitem{CCKN}
+Chang MF, Cong J, Kaplan A, Naik M, Reinman G, Socher E, et~al.
+\newblock CMP network-on-chip overlaid with multi-band RF-interconnect.
+\newblock In: High Performance Computer Architecture, 2008. HPCA 2008. IEEE
+  14th International Symposium on. Ieee; 2008. p. 191--202.
+
+\bibitem{CSTC}
+Chang MCF, Socher E, Tam SW, Cong J, Reinman G.
+\newblock RF interconnects for communications on-chip.
+\newblock In: Proceedings of the 2008 international symposium on Physical
+  design. ACM; 2008. p. 78--83.
+
+\bibitem{OM}
+Ogras UY, Marculescu R.
+\newblock " It's a small world after all": NoC performance optimization via
+  long-range link insertion.
+\newblock Very Large Scale Integration (VLSI) Systems, IEEE Transactions on.
+  2006;14(7):693--706.
+
+\bibitem{PD}
+Pickavet M, Demeester P.
+\newblock A zoom-in approach to design SDH mesh restorable networks.
+\newblock In: Heuristic Approaches for Telecommunications Network Management,
+  Planning and Expansion. Springer; 2000. p. 107--130.
+
+\bibitem{JGN}
+Jin EM, Girvan M, Newman ME.
+\newblock Structure of growing social networks.
+\newblock Physical review E. 2001;64(4):046132.
+
+\bibitem{N}
+Newman ME.
+\newblock The structure and function of complex networks.
+\newblock SIAM review. 2003;45(2):167--256.
+
+\bibitem{GCM}
+Gaur N, Chakraborty A, Manoj B.
+\newblock Delay Optimized Small-World Networks.
+\newblock Communications Letters, IEEE. 2014;18(11):1939--1942.
+
+\bibitem{CLRS}
+Cormen TH, Leiserson CE, Rivest RL, Stein C.
+\newblock Introduction to algorithms. vol.~6.
+\newblock MIT press Cambridge; 2001.
+
+\end{thebibliography}
