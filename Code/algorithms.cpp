@@ -32,8 +32,6 @@ int sum_shortest(vector<vector<int>> adj_mat) {
 	return sum;
 }
 
-#include <iostream>
-
 // Implements the naive algorithm for finding a single edge
 // from a set of edges "el" that, when added to a graph
 // defined by "adj_mat", minimizes the average shortest path.
@@ -45,11 +43,9 @@ int brute_force(vector<vector<int>> adj_mat, const vector<Edge>& el) {
 		int old_c = adj_mat[e.i][e.j];
 		adj_mat[e.i][e.j] = e.cost;
 		best = min(best, sum_shortest(adj_mat));
-		cout << e.i << " " << e.j << " " << e.cost << " " << sum_shortest(adj_mat) << endl;
 		adj_mat[e.i][e.j] = old_c;
 
 	}
-	cout << best << endl;
 	return best;
 }
 
