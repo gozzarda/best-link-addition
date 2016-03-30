@@ -37,10 +37,11 @@ void run_test(int seed, int V) {
 
 	int bf_ans = brute_force(adj_mat, choices);
 	int wd_ans = ward_datta(adj_mat, choices);
+	int gozz_ans = gozzard(adj_mat, choices);
 
-	if (bf_ans != wd_ans) {
+	if (bf_ans != wd_ans || bf_ans != gozz_ans) {
 		cout << "Test failed, debug output following..." << endl;
-		cout << bf_ans << " " << wd_ans << endl;
+		cout << bf_ans << " " << wd_ans << " " << gozz_ans << endl;
 		for (int i = 0; i < V; ++i) {
 			for (int j = 0; j < V; ++j)
 				cout << adj_mat[i][j] << "\t";

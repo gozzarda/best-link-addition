@@ -38,12 +38,16 @@ void run_test(int seed, int V) {
 	// Dummy edge that represents taking no edge.
 	choices.push_back(Edge(0, 0, 0));
 
-	cout << "Ward-Datta (ms)\tBrute force (ms)" << endl;
+	cout << "G (ms)\t\tWD (ms)\t\tBF (ms)" << endl;
 
 	auto start = chrono::system_clock::now();
-	ward_datta(adj_mat, choices);
+	gozzard(adj_mat, choices);
 	auto end = chrono::system_clock::now();
-	cout << chrono::duration<double, milli>(end - start).count() << "\t";
+	cout << chrono::duration<double, milli>(end - start).count() << "\t\t";
+	start = chrono::system_clock::now();
+	ward_datta(adj_mat, choices);
+	end = chrono::system_clock::now();
+	cout << chrono::duration<double, milli>(end - start).count() << "\t\t";
 	start = chrono::system_clock::now();
 	brute_force(adj_mat, choices);
 	end = chrono::system_clock::now();
