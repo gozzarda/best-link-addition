@@ -1,6 +1,7 @@
 #include "algorithms.h"
 
 #include <algorithm>
+#include <iterator>
 
 using namespace std;
 
@@ -90,18 +91,18 @@ int gozzard(std::vector<std::vector<int>> adj_mat, const std::vector<Edge>& el) 
  	std::vector<int> votes(E, 0);
  	for (int src = 0; src < V; ++src) {
  		// Build lists of threshold lengths from src to mid required to be new shortest path
- 		std::vector<std::vector<int>> threshholds(V);
+ 		std::vector<std::vector<int>> thresholds(V);
  		for (int dst = 0; dst < V; ++dst) {
  			for (int mid = 0; mid < V; ++mid) {
- 				threshholds[mid].push_back(adj_mat[src][dst] - adj_mat[mid][dst]);
+ 				thresholds[mid].push_back(adj_mat[src][dst] - adj_mat[mid][dst]);
  			}
  		}
  		// Sort thresholds and compute sum arrays
  		std::vector<std::vector<int>> threshsums(V);
  		for (int i = 0; i < V; ++i) {
- 			std::sort(threshholds[i].begin(), threshholds[i].end());
+ 			std::sort(thresholds[i].begin(), thresholds[i].end());
  			threshsums[i].push_back(0);
- 			for (int elem : threshholds[i]) {
+ 			for (int elem : thresholds[i]) {
  				threshsums[i].push_back(threshsums[i].back() + elem);
  			}
  		}
@@ -109,9 +110,9 @@ int gozzard(std::vector<std::vector<int>> adj_mat, const std::vector<Edge>& el) 
  		for (int i = 0; i < E; ++i) {
  			Edge e = el[i];
  			int len = adj_mat[src][e.i] + e.cost;
- 			auto it = std::lower_bound(threshholds[e.j].begin(), threshholds[e.j].end(), len);
- 			int ind = std::distance(threshholds[e.j].begin(), it);
- 			int num = std::distance(it, threshholds[e.j].end());
+ 			auto it = std::lower_bound(thresholds[e.j].begin(), thresholds[e.j].end(), len);
+ 			int ind = std::distance(thresholds[e.j].begin(), it);
+ 			int num = std::distance(it, thresholds[e.j].end());
  			int vote = threshsums[e.j].back() - threshsums[e.j][ind] - num * len;
  			votes[i] += vote;
  		}

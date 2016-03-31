@@ -2,7 +2,6 @@
 #define _ALGORITHMS_H
 
 #include <vector>
-#include <iterator>
 
 // A reasonably large infinity value for 32-bit integers.
 // We avoid INT_MAX to avoid overflows.
